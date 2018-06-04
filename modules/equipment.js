@@ -213,7 +213,7 @@ function evaluateEquipmentEfficiency(equipName) {
         Wall = true;
     }
     //AlwaysLvl2 - Was AlwaysArmorLvl2 (now default)
-    if (gameResource.level < 10 && MODULES["equipment"].alwaysLvl2) {
+    if (gameResource.level < 2 && MODULES["equipment"].alwaysLvl2) {
         Factor = 999 - gameResource.prestige;
     }
     //skip buying shields (w/ shieldblock) if we need gymystics
@@ -422,7 +422,7 @@ function autoLevelEquipment() {
                 }
             }
             var aalvl2 = MODULES["equipment"].alwaysLvl2; //getPageSetting('AlwaysArmorLvl2');
-            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 10){
+            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 2){
                 if (DaThing.Equip && !Best[stat].Wall && canAffordBuilding(eqName, null, null, true)) {
                     debug('Leveling equipment ' + eqName + " (AlwaysLvl2)", "equips", '*upload3');
                     buyEquipment(eqName, null, true);
