@@ -422,7 +422,7 @@ function autoLevelEquipment() {
                 }
             }
             var aalvl2 = MODULES["equipment"].alwaysLvl2; //getPageSetting('AlwaysArmorLvl2');
-            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 2){
+            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 20){
                 if (DaThing.Equip && !Best[stat].Wall && canAffordBuilding(eqName, null, null, true)) {
                     debug('Leveling equipment ' + eqName + " (AlwaysLvl2)", "equips", '*upload3');
                     buyEquipment(eqName, null, true);
