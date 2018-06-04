@@ -3,7 +3,7 @@ MODULES["equipment"] = {};
 MODULES["equipment"].numHitsSurvived = 10;   //survive X hits in D stance or not enough Health.
 MODULES["equipment"].numHitsSurvivedScry = 80;
 MODULES["equipment"].enoughDamageCutoff = 4; //above this the game will buy attack equipment
-MODULES["equipment"].capDivisor = 6; //Your Equipment cap divided by this will give you the lower cap for liquified and overkilled zones
+MODULES["equipment"].capDivisor = 10; //Your Equipment cap divided by this will give you the lower cap for liquified and overkilled zones
 MODULES["equipment"].alwaysLvl2 = true; //Always buys the 2nd level of equipment. Its the most effective.
 MODULES["equipment"].waitTill60 = true; // 'Skip Gear Level 58&59', 'Dont Buy Gear during level 58 and 59, wait till level 60, when cost drops down to 10%
 MODULES["equipment"].equipHealthDebugMessage = false;    //this repeats a message when you don't have enough health. set to false to stop the spam.
@@ -422,7 +422,7 @@ function autoLevelEquipment() {
                 }
             }
             var aalvl2 = MODULES["equipment"].alwaysLvl2; //getPageSetting('AlwaysArmorLvl2');
-            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 10){
+            if (getPageSetting('BuyArmor') && (DaThing.Stat == 'health') && aalvl2 && game.equipment[eqName].level < 2){
                 if (DaThing.Equip && !Best[stat].Wall && canAffordBuilding(eqName, null, null, true)) {
                     debug('Leveling equipment ' + eqName + " (AlwaysLvl2)", "equips", '*upload3');
                     buyEquipment(eqName, null, true);
